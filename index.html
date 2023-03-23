@@ -11,6 +11,9 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css/estilos.css" />
   </head>
   <body>
@@ -22,18 +25,110 @@
 
     <header class="encabezado">
       <h1>TABLERO DE DATOS</h1>
+      <h4>Por favor escribe tus datos en la sección y agregalos, en caso de no ser correctos, elimina y vuelve a agregarlos</h4>
     </header>
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Escribe tu nombre y apellido"
-        aria-label="Recipient's username with two button addons"
-      />
-      <button id= "botonañadir" onclick="añadir()" class="boton1" type="button">Añadir</button>
-      <button id= "botoneliminar" onclick="eliminar()" class="boton2" type="button">Eliminar</button>
-      <button id= "botoneliminartodo" onclick="eliminartodo()" class="boton3" type="button">Eliminar Todo</button>
-    </div>
+     </div>
+     <body>
+    
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+  
+      <div class="container mt-5">
+        <section class="row">
+          <article class="col">
+            <form>
+              <div class="mb-3">
+                <label for="nombreInput" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombreInput"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="apellidoInput" class="form-label">Apellido</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apellidoInput"
+                  autocomplete="off"
+                />
+              </div>
+              <button
+                type="button"
+                class="btn btn-success"
+                onclick="agregarUsuario()"
+              >
+                Agregar
+              </button>
+              <button
+                type="button"
+                class="btn btn-info"
+                onclick="mostrarUsuarios()"
+              >
+                Mostrar
+              </button>
+            </form>
+          </article>
+          <article>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellido</th>
+                </tr>
+              </thead>
+              <tbody id="cuerpoTabla"></tbody>
+            </table>
+          </article>
+        </section>
+      </div>
+  
 
     <script src="./js/codigo.js"></script>
     <script

@@ -1,3 +1,7 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
 .topnav {
   overflow: hidden;
   background-color: #0091ff;
@@ -36,6 +40,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #0091ff;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
 }
 
@@ -81,4 +88,9 @@ div {
 button {
   background-color: #00e5ff2c;
   border-color: #0091ff;
+}
+
+.btn-success {
+  background-color: #cf7cf8;
+  border-color: #aa00ff;
 }
