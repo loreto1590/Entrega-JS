@@ -73,3 +73,12 @@ footer {
   align-items: center;
   justify-content: center;
 }
+
+div {
+  text-align: center;
+}
+
+button {
+  background-color: #00e5ff2c;
+  border-color: #0091ff;
+}
