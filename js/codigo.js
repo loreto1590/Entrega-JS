@@ -3,7 +3,8 @@ const apellido = document.getElementById("apellidoInput");
 const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 const cuerpoTabla = document.getElementById("cuerpoTabla");
 const btnEditar = document.getElementById("btnEditar");
-const btnAgregar = document.getElementById("btnAgregar")
+const btnAgregar = document.getElementById("btnAgregar");
+const idInput = document.getElementById("idInput");
 
 const agregarUsuario = () => {
   const usuario = {
@@ -59,13 +60,27 @@ const eliminarUusario = (id) => {
 const editarUusuario = (id) => {
   btnAgregar.style.display = "none";
   btnEditar.style.display = "inline";
-const usuario = usuarios.find((usuario) => usuario.id === id )
-nombre.value = usuario.nombre;
-apellido.value = usuario.apellido;
-}
+  const usuario = usuarios.find((usuario) => usuario.id === id);
+  idInput.value = usuario.id;
+  nombre.value = usuario.nombre;
+  apellido.value = usuario.apellido;
+};
 
 const confirmarEdicion = () => {
-  console.log("Información actualizada")
-}
+  const usuario = usuarios.find((usuario) => usuario.id === idInput.value);
+  usuario.nombre = nombre.value;
+  usuario.apellido = apellido.value;
+  localStorage.setItem("usuarios", JSON.stringify(usuarios))
+
+  btnAgregar.style.display = "inline"
+  btnEditar.style.display = "none"
+
+  idInput.value = "";
+  nombre.value = "";
+  apellido.value = "";
+
+  mostrarUsuarios ();
+  
+};
 
 window.addEventListener("load", mostrarUsuarios);
